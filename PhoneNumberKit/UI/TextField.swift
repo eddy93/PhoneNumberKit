@@ -279,12 +279,9 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
         guard withDefaultPickerUI else { return }
         let vc = CountryCodePickerViewController(phoneNumberKit: phoneNumberKit)
         vc.delegate = self
-        if let nav = containingViewController?.navigationController, !PhoneNumberKit.CountryCodePicker.forceModalPresentation {
-            nav.pushViewController(vc, animated: true)
-        } else {
-            let nav = UINavigationController(rootViewController: vc)
-            containingViewController?.present(nav, animated: true)
-        }
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.backgroundColor = phoneNumberKit.navigationBarColor ?? .black
+        containingViewController?.present(nav, animated: true)
     }
 
     /// containingViewController looks at the responder chain to find the view controller nearest to itself
