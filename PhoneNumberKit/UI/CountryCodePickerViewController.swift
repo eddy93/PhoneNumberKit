@@ -90,7 +90,7 @@ public class CountryCodePickerViewController: UITableViewController {
         tableView.register(Cell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.backgroundColor = .clear
+        //searchController.searchBar.backgroundColor = .clear
         navigationItem.searchController = searchController
         definesPresentationContext = true
         UINavigationBar.appearance().barTintColor = phoneNumberKit.navigationBarColor ?? .black
@@ -103,7 +103,6 @@ public class CountryCodePickerViewController: UITableViewController {
             navigationItem.standardAppearance = appearance
             navigationItem.scrollEdgeAppearance = appearance
         }
-        print("here")
     }
 
     public override func viewWillAppear(_ animated: Bool) {
