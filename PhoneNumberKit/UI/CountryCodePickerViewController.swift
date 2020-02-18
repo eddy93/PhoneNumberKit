@@ -93,11 +93,7 @@ public class CountryCodePickerViewController: UITableViewController {
         searchController.searchBar.backgroundColor = .clear
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        if #available(iOS 13.0, *) {
-            UINavigationBarAppearance().backgroundColor = phoneNumberKit.navigationBarColor ?? .black
-        } else {
-            UINavigationBar.appearance().barTintColor = phoneNumberKit.navigationBarColor ?? .black
-        }
+        navigationController?.navigationBar.barTintColor = phoneNumberKit.navigationBarColor ?? .black
     }
 
     public override func viewWillAppear(_ animated: Bool) {
