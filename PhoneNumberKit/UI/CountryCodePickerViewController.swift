@@ -101,7 +101,7 @@ public class CountryCodePickerViewController: UITableViewController {
             // Always adopt a light interface style.
             overrideUserInterfaceStyle = .light
             let appearance = UINavigationBarAppearance()
-            appearance.backgroundColor = .black
+            appearance.backgroundColor = phoneNumberKit.navigationBarColor
             navigationItem.standardAppearance = appearance
             navigationItem.scrollEdgeAppearance = appearance
         }
