@@ -90,11 +90,15 @@ public class CountryCodePickerViewController: UITableViewController {
         tableView.register(Cell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        //searchController.searchBar.backgroundColor = .clear
+        searchController.searchBar.backgroundColor = .clear
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        UINavigationBar.appearance().barTintColor = .black
-        navigationController?.navigationBar.barTintColor = .black
+        //UINavigationBar.appearance().barTintColor = .black
+        //navigationController?.navigationBar.barTintColor = .black
+    }
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
         if #available(iOS 13.0, *) {
             // Always adopt a light interface style.
             overrideUserInterfaceStyle = .light
