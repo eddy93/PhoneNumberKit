@@ -114,7 +114,7 @@ public class CountryCodePickerViewController: UITableViewController {
             textField.tintColor = .black
             guard let glassIconView = textField.leftView as? UIImageView else {return}
             glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
-            glassIconView.tintColor = .white
+            glassIconView.tintColor = .gray
         } else {
             if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
                 if let backgroundView = textField.subviews.first {
