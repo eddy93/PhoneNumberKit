@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 #if os(iOS)
 import CoreTelephony
 #endif
@@ -18,6 +19,7 @@ public final class PhoneNumberKit: NSObject {
     let metadataManager: MetadataManager
     let parseManager: ParseManager
     let regexManager = RegexManager()
+    var navigationBarColor: UIColor?
 
     // MARK: Lifecycle
 

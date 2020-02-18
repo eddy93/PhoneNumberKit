@@ -87,14 +87,17 @@ public class CountryCodePickerViewController: UITableViewController {
     }
 
     func commonInit() {
-        self.title = "Choose your country"
-
         tableView.register(Cell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.backgroundColor = .clear
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        if #available(iOSApplicationExtension 13.0, *) {
+            UINavigationBarAppearance().backgroundColor = phoneNumberKit.navigationBarColor ?? .black
+        } else {
+            UINavigationBar.appearance().barTintColor = phoneNumberKit.navigationBarColor ?? .black
+        }
     }
 
     public override func viewWillAppear(_ animated: Bool) {
