@@ -282,7 +282,7 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
         let nav = UINavigationController(rootViewController: vc)
         nav.navigationBar.backgroundColor = .black
         vc.navigationController?.navigationBar.tintColor = .black
-        nav.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .fullScreen
         containingViewController?.present(nav, animated: true)
         
     }
