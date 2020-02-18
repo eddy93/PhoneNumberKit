@@ -27,6 +27,10 @@ public final class PhoneNumberKit: NSObject {
         self.metadataManager = MetadataManager(metadataCallback: metadataCallback)
         self.parseManager = ParseManager(metadataManager: self.metadataManager, regexManager: self.regexManager)
     }
+    
+    public func setColor(_ color: UIColor) {
+        navigationBarColor = color
+    }
 
     // MARK: Parsing
 
