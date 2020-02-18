@@ -283,6 +283,7 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
         nav.navigationBar.backgroundColor = .black
         vc.navigationController?.navigationBar.tintColor = .black
         containingViewController?.present(nav, animated: true)
+        nav.modalPresentationStyle = .fullScreen
     }
 
     /// containingViewController looks at the responder chain to find the view controller nearest to itself

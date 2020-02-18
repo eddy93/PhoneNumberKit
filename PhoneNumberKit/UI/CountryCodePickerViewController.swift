@@ -93,8 +93,6 @@ public class CountryCodePickerViewController: UITableViewController {
         searchController.searchBar.backgroundColor = .clear
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        //UINavigationBar.appearance().barTintColor = .black
-        //navigationController?.navigationBar.barTintColor = .black
     }
     
     public override func viewDidLoad() {
@@ -106,6 +104,29 @@ public class CountryCodePickerViewController: UITableViewController {
             appearance.backgroundColor = .black
             navigationItem.standardAppearance = appearance
             navigationItem.scrollEdgeAppearance = appearance
+        }
+        searchController.searchBar.tintColor = .white
+        if #available(iOS 13.0, *) {
+            let textField = searchController.searchBar.searchTextField
+            textField.overrideUserInterfaceStyle = .light
+            textField.backgroundColor = .white
+            textField.font = UIFont.systemFont(ofSize: 12)
+            textField.tintColor = .black
+            guard let glassIconView = textField.leftView as? UIImageView else {return}
+            glassIconView.image = glassIconView.image?.withRenderingMode(.alwaysTemplate)
+            glassIconView.tintColor = .white
+        } else {
+            if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+                if let backgroundView = textField.subviews.first {
+                    // Background color
+                    backgroundView.backgroundColor = .white
+                    // Rounded corner
+                    backgroundView.layer.cornerRadius = 10
+                    backgroundView.clipsToBounds = true
+                }
+                textField.font = UIFont.systemFont(ofSize: 12)
+                textField.tintColor = UIView().tintColor
+            }
         }
     }
 
