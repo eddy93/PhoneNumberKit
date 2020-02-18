@@ -280,7 +280,7 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
         let vc = CountryCodePickerViewController(phoneNumberKit: phoneNumberKit)
         vc.delegate = self
         let nav = UINavigationController(rootViewController: vc)
-        nav.navigationBar.backgroundColor = phoneNumberKit.navigationBarColor ?? .black
+        nav.navigationBar.backgroundColor = .black
         containingViewController?.present(nav, animated: true)
     }
 
