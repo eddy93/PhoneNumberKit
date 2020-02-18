@@ -103,6 +103,7 @@ public class CountryCodePickerViewController: UITableViewController {
             navigationItem.standardAppearance = appearance
             navigationItem.scrollEdgeAppearance = appearance
         }
+        print("here")
     }
 
     public override func viewWillAppear(_ animated: Bool) {
