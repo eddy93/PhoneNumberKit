@@ -32,7 +32,7 @@ public final class PhoneNumberKit: NSObject {
     public func setColor(_ color: UIColor) {
         navigationBarColor = color
     }
-    public func setNavigationItemTitleView(_ titleViewToAdd: UIView) {
+    public func setTheNavigationItemTitleView(_ titleViewToAdd: UIView) {
         navigationItemTitleView = titleViewToAdd
     }
 
