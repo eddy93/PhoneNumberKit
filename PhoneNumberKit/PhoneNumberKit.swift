@@ -20,7 +20,8 @@ public final class PhoneNumberKit: NSObject {
     let parseManager: ParseManager
     let regexManager = RegexManager()
     var navigationBarColor: UIColor?
-
+    var navigationItemTitleView: UIView?
+    
     // MARK: Lifecycle
 
     public init(metadataCallback: @escaping MetadataCallback = PhoneNumberKit.defaultMetadataCallback) {
@@ -30,6 +31,9 @@ public final class PhoneNumberKit: NSObject {
     
     public func setColor(_ color: UIColor) {
         navigationBarColor = color
+    }
+    public func setNavigationItemTitleView(_ view: UIView) {
+        navigationItemTitleView = view
     }
 
     // MARK: Parsing

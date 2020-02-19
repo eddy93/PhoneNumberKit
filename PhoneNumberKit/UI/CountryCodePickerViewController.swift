@@ -87,6 +87,7 @@ public class CountryCodePickerViewController: UITableViewController {
     }
 
     func commonInit() {
+        navigationItem.titleView = phoneNumberKit.navigationItemTitleView
         tableView.register(Cell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
