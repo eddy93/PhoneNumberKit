@@ -29,13 +29,10 @@ public final class PhoneNumberKit: NSObject {
         self.parseManager = ParseManager(metadataManager: self.metadataManager, regexManager: self.regexManager)
     }
     
-    public func setColor(_ color: UIColor) {
+    public func setColor(_ color: UIColor, view: UIView?) {
         navigationBarColor = color
+        navigationItemTitleView = view
     }
-    public func setMyTitle(_ name: String) {
-        
-    }
-
     // MARK: Parsing
 
     /// Parses a number string, used to create PhoneNumber objects. Throws.
